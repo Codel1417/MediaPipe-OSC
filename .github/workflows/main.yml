@@ -17,7 +17,9 @@ jobs:
       uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
       with:
         path: .
-
+    - name: where is my exe
+      run: |
+        cd dist && ls -R
     - uses: actions/upload-artifact@v2
       with:
         name: mediaPipeFaceTracking
