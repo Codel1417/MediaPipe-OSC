@@ -4,3 +4,4 @@ mediapipe~=0.10.1
 numpy~=1.25.0
 PyQt6~=6.5.1
 pygrabber~=0.1
+qt-material~=2.14

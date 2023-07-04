@@ -18,6 +18,7 @@ from mediapipe.tasks.python.vision.face_landmarker import FaceLandmarker, FaceLa
 from pygrabber.dshow_graph import FilterGraph
 from pythonosc import udp_client
 from pythonosc.udp_client import SimpleUDPClient
+from qt_material import apply_stylesheet
 
 configPathAppData: str = path.join(path.expanduser('~'), 'AppData', 'Local', 'MediaPipeOSC')
 configPath: str = path.join(configPathAppData, 'MediaPipeOSC.config')
@@ -131,6 +132,7 @@ def UI():
     try:
         app: QApplication = QApplication([])
         window: QWidget = QWidget()
+        apply_stylesheet(app, theme='light_teal.xml')
         window.setWindowTitle("MediaPipe OSC")
         ipRegex = QRegularExpression('[0-9]+(?:\.[0-9]+){3}:[0-9]+')
         layout = QFormLayout()
