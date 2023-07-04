@@ -16,6 +16,7 @@ This wraps Google [MediaPipe Face Landmark API](https://developers.google.com/me
 
 - Requires a webcam.
 - The OSC port is editable, but the VRCFT plugin only supports port 8888.
+- Eye tracking is less accurate with glasses, and may be inconsistent if your head is moving
 
 ## Build
 Building an EXE
