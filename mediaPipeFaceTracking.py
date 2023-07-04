@@ -9,7 +9,7 @@ from threading import Thread
 import cv2
 import mediapipe as mp
 from PyQt6.QtCore import QRegularExpression
-from PyQt6.QtGui import QRegularExpressionValidator
+from PyQt6.QtGui import QRegularExpressionValidator, QIcon
 from PyQt6.QtWidgets import QLineEdit, QApplication, QWidget, QComboBox, QFormLayout, QLabel, QCheckBox
 from cv2 import VideoCapture
 from mediapipe import Image
@@ -23,6 +23,7 @@ from qt_material import apply_stylesheet
 configPathAppData: str = path.join(path.expanduser('~'), 'AppData', 'Local', 'MediaPipeOSC')
 configPath: str = path.join(configPathAppData, 'MediaPipeOSC.config')
 model_path: str = path.abspath(path.join(path.dirname(__file__), 'face_landmarker.task'))
+icon_path: str = path.abspath(path.join(path.dirname(__file__), 'google_mediapipe_logo_notMine.png'))
 currentCamID: int = 0
 currentCamName: str = ""
 capture: VideoCapture | None = None
@@ -134,6 +135,7 @@ def UI():
         window: QWidget = QWidget()
         apply_stylesheet(app, theme='light_teal.xml')
         window.setWindowTitle("MediaPipe OSC")
+        window.setWindowIcon(QIcon(icon_path))
         ipRegex = QRegularExpression('[0-9]+(?:\.[0-9]+){3}:[0-9]+')
         layout = QFormLayout()
         layout.addRow(QLabel("Camera:"), getCameras())

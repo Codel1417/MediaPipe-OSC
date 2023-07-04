@@ -8,7 +8,7 @@ a = Analysis(
     ['mediaPipeFaceTracking.py'],
     pathex=[],
     binaries=[],
-    datas=[('./face_landmarker.task', '.')],
+    datas=[('./face_landmarker.task', '.'),('./google_mediapipe_logo_notMine.png', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,10 +35,11 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='google_mediapipe_logo_notMine.ico'
 )
