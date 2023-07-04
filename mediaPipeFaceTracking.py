@@ -5,7 +5,6 @@ import sys
 import time
 from os import path
 from threading import Thread
-
 import cv2
 import mediapipe as mp
 from PyQt6.QtCore import QRegularExpression
@@ -32,8 +31,7 @@ OSCport: int = 8888
 client: SimpleUDPClient = udp_client.SimpleUDPClient(OSCip, OSCport)
 graph: FilterGraph = FilterGraph()
 faceThread: Thread | None = None
-enabled = False
-
+enabled: bool = False
 
 def getCamFromStr(cam: str):
     global currentCamName
@@ -119,7 +117,7 @@ def startStop(checked: bool):
     print("startStop " + str(checked))
     global enabled
     global faceThread
-    if (checked == enabled):
+    if checked == enabled:
         return
     enabled = checked
     if faceThread is None:
@@ -224,5 +222,7 @@ if __name__ == "__main__":
     loadConfig()
     try:
         UI()
+    except Exception as e:
+        print(e)
     finally:
         enabled = False

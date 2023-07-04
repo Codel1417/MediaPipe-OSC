@@ -1,7 +1,6 @@
 python-osc~=1.8.1
-opencv-python-headless~=4.8.0.74
 mediapipe~=0.10.1
-numpy~=1.25.0
 PyQt6~=6.5.1
 pygrabber~=0.1
 qt-material~=2.14
+opencv-python-headless
