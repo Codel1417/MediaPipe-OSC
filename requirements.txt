@@ -1,4 +1,4 @@
-python-osc~=1.8.1
+python-osc~=1.8.3
 mediapipe~=0.10.1
 PyQt6~=6.5.1
 pygrabber~=0.1
